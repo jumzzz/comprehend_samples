@@ -44,14 +44,7 @@ def main():
     response = client.start_entities_detection_job(
         InputDataConfig={
             'S3Uri': input_s3_uri,
-            'InputFormat': 'ONE_DOC_PER_FILE',
-            'DocumentReaderConfig': {
-                'DocumentReadAction': 'TEXTRACT_DETECT_DOCUMENT_TEXT',
-                'DocumentReadMode': 'FORCE_DOCUMENT_READ_ACTION',
-                'FeatureTypes': [
-                    'TABLES',
-                ]
-            }
+            'InputFormat': 'ONE_DOC_PER_FILE'
         },
         OutputDataConfig={
             'S3Uri': output_s3_uri,

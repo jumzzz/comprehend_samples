@@ -36,9 +36,9 @@ def main():
     role_template = load_json(args.role_template)
     region_name = get_current_region()
 
-    source_arn = f'arn:aws:comprehend:{region_name}:{account_id}:*/*'
-    role_template['Statement'][0]['Condition']['StringEquals']['aws:SourceAccount'] = account_id
-    role_template['Statement'][0]['Condition']['ArnEquals']['aws:SourceArn'] = source_arn
+    # source_arn = f'arn:aws:comprehend:{region_name}:{account_id}:*/*'
+    # role_template['Statement'][0]['Condition']['StringEquals']['aws:SourceAccount'] = account_id
+    # role_template['Statement'][0]['Condition']['ArnEquals']['aws:SourceArn'] = source_arn
 
     print('Role Generated for: ')
     print(json.dumps(role_template, indent=4))

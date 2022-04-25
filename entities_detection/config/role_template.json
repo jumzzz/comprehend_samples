@@ -2,19 +2,25 @@
     "Version": "2012-10-17",
     "Statement": [
       {
-        "Effect": "Allow",
-        "Principal": {
-          "Service": "comprehend.amazonaws.com"
-        },
-        "Action": "sts:AssumeRole",
-        "Condition": {
-            "StringEquals": {
-                "aws:SourceAccount": "{account_id}"
-            },
-            "ArnEquals": {
-                "aws:SourceArn": "arn:aws:comprehend:{region_name}:{account_id}:*/*"
-            }
+            "Action": [
+                "kms:CreateGrant",
+                "kms:Decrypt",
+                "kms:GenerateDatakey"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+      },
+      {
+            "Action": [
+                "comprehend:*",
+                "iam:ListRoles",
+                "iam:GetRole",
+                "s3:ListAllMyBuckets",
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
         }
-      }
     ]
 }
