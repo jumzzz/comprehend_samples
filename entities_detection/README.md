@@ -32,6 +32,5 @@ aws iam create-role --role-name Test-Role --assume-role-policy-document file://T
 }
 ```
 
-
 3. Save the Role ARN
 4. Create an SSE-KMS

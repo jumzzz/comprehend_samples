@@ -2,9 +2,9 @@
     "Role": {
         "Path": "/",
         "RoleName": "comprehend-role-v2",
-        "RoleId": "AROA2AEPAUQAU7HQYH2N6",
+        "RoleId": "AROA2AEPAUQAS5JK2HGIS",
         "Arn": "arn:aws:iam::687494702081:role/comprehend-role-v2",
-        "CreateDate": "2022-04-25T09:45:52+00:00",
+        "CreateDate": "2022-04-25T10:42:32+00:00",
         "AssumeRolePolicyDocument": {
             "Version": "2012-10-17",
             "Statement": [
@@ -16,10 +16,10 @@
                     "Action": "sts:AssumeRole",
                     "Condition": {
                         "StringEquals": {
-                            "aws:SourceAccount": "{account_id}"
+                            "aws:SourceAccount": "687494702081"
                         },
                         "ArnEquals": {
-                            "aws:SourceArn": "arn:aws:comprehend:{region_name}:{account_id}:*/*"
+                            "aws:SourceArn": "arn:aws:comprehend:us-east-1:687494702081:*/*"
                         }
                     }
                 }

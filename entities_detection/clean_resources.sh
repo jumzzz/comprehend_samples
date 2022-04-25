@@ -1,1 +1,1 @@
-aws iam delete-role --role-name comprehend-role-v1
+aws iam delete-role --role-name comprehend-role-v2
