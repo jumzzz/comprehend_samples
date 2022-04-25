@@ -2,9 +2,9 @@
     "Role": {
         "Path": "/",
         "RoleName": "comprehend-role-v2",
-        "RoleId": "AROA47JIWO3ONRZI2ZBUX",
-        "Arn": "arn:aws:iam::891827943132:role/comprehend-role-v2",
-        "CreateDate": "2022-04-25T05:35:20+00:00",
+        "RoleId": "AROA2AEPAUQAU7HQYH2N6",
+        "Arn": "arn:aws:iam::687494702081:role/comprehend-role-v2",
+        "CreateDate": "2022-04-25T09:45:52+00:00",
         "AssumeRolePolicyDocument": {
             "Version": "2012-10-17",
             "Statement": [
