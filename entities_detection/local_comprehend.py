@@ -65,10 +65,7 @@ def main():
 
     status = status['EntitiesDetectionJobProperties']['JobStatus'].upper()
 
-    # print('Trimmed Status: ')
-    # print(status)
-
-    while status != 'COMPLETED' or status != 'FAILED':
+    while status != 'COMPLETED' and status != 'FAILED':
         print(f'JobId = {job_id} still in progress...')
         print(f'Current Status = {status}')
         time.sleep(5)
@@ -76,8 +73,9 @@ def main():
         status = client.describe_entities_detection_job(JobId=job_id)
         status = status['EntitiesDetectionJobProperties']['JobStatus'].upper()
 
-        if 'COMPLETED' in status:
-            break
+    print(f'Final Status: {status}')
+    print('Done...')
+
 
 if __name__ == '__main__':
     main()
