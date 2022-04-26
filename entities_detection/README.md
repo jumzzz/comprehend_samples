@@ -2,35 +2,56 @@
 
 In this sample implementation we will implement the following.
 
-```
-```
+## Steps to Run
 
-## Steps to take
-
-1. Get AWS Account ID
-
+You can use terraform to deploy your AWS Resources
 ```
-aws sts get-caller-identity
+terraform -chdir=infra/ init
+terraform -chdir=infra/ plan
+terraform -chdir=infra/ apply
 ```
-
-2. Create a Role
+Then generate a configuration file `config.json` using the following commands: 
 
 ```
-aws iam create-role --role-name Test-Role --assume-role-policy-document file://Test-Role-Trust-Policy.json
+terraform -chdir=infra/ output -json > config.json
 ```
 
+Then, afterwards you can run `run_comprehend.sh`
+
 ```
-{
-  "Role": {
-      "AssumeRolePolicyDocument": "<URL-encoded-JSON>",
-      "RoleId": "AKIAIOSFODNN7EXAMPLE",
-      "CreateDate": "2013-06-07T20:43:32.821Z",
-      "RoleName": "Test-Role",
-      "Path": "/",
-      "Arn": "arn:aws:iam::123456789012:role/Test-Role"
-  }
-}
+chmod +x run_comprehend.sh
+./run_comprehend.sh
 ```
 
-3. Save the Role ARN
-4. Create an SSE-KMS
+This produces an output
+```
+...
+JobId = 33416accdfab89b7175e5945c17df58f still in progress...
+Current Status = IN_PROGRESS
+JobId = 33416accdfab89b7175e5945c17df58f still in progress...
+Current Status = IN_PROGRESS
+JobId = 33416accdfab89b7175e5945c17df58f still in progress...
+Current Status = IN_PROGRESS
+JobId = 33416accdfab89b7175e5945c17df58f still in progress...
+Current Status = IN_PROGRESS
+JobId = 33416accdfab89b7175e5945c17df58f still in progress...
+Current Status = IN_PROGRESS
+JobId = 33416accdfab89b7175e5945c17df58f still in progress...
+Current Status = IN_PROGRESS
+JobId = 33416accdfab89b7175e5945c17df58f still in progress...
+Current Status = IN_PROGRESS
+Final Status: COMPLETED
+Done...
+
+```
+
+## Cleaning up
+After running this sample implementation feel free to clean up your resources
+
+```
+aws s3 rm s3://<name_of_the_bucket>/ --recursive
+terraform -chdir=infra/ destroy
+```
+
+## Note
+- You can change the `bucket_name`, `role_name`, and `policy_name` on `infra/vars.tf`
