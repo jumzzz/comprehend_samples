@@ -1,3 +1,0 @@
-[submodule "entities_detection/aws_ai_service_tf"]
-	path = entities_detection/aws_ai_service_tf
-	url = git@github.com:jumzzz/aws_ai_service_tf.git
