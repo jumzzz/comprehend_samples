@@ -3,7 +3,7 @@
         {
             "ApplyServerSideEncryptionByDefault": {
                 "SSEAlgorithm": "aws:kms",
-                "KMSMasterKeyID": "926d2936-7949-4bce-9ee2-b60c4bba53c8"
+                "KMSMasterKeyID": "1abdf12a-7f93-4c00-96c5-c7f72643ed80"
             },
             "BucketKeyEnabled": false
         }

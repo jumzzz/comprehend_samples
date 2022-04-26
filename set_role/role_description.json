@@ -1,0 +1,29 @@
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "comprehend-role-v3",
+        "RoleId": "AROATO25JH72PZBAGX4DX",
+        "Arn": "arn:aws:iam::238029455348:role/comprehend-role-v3",
+        "CreateDate": "2022-04-26T05:09:15+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "comprehend.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole",
+                    "Condition": {
+                        "StringEquals": {
+                            "aws:SourceAccount": "238029455348"
+                        },
+                        "ArnEquals": {
+                            "aws:SourceArn": "arn:aws:comprehend:us-east-1:238029455348:*/*"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
